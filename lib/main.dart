@@ -3,12 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
-import 'Features/Splash/presentation/views/splash_view.dart';
+import 'Features/splash/presentation/views/splash_view.dart';
 
 void main() {
+  // change status bar and navigation bar color to black
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-    statusBarColor: Colors.black, // Replace 'Colors.blue' with the color you desire
-  ));
+      statusBarColor: Colors.black,
+      systemNavigationBarColor: Colors.black // Replace 'Colors.blue' with the color you desire
+      ));
   runApp(const BookHunter());
 }
 
