@@ -8,7 +8,7 @@ class CustomAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 25),
+      padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
       child: Row(
         children: [
           Text(
@@ -17,7 +17,7 @@ class CustomAppBar extends StatelessWidget {
               fontFamily: AssetsData.splashFont,
               fontWeight: FontWeight.bold,
               letterSpacing: 0.4,
-              fontSize: 19,
+              fontSize: 20,
             ),
           ),
           const Spacer(),
