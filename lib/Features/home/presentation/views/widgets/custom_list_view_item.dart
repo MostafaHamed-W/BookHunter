@@ -11,7 +11,7 @@ class CustomListViewItem extends StatelessWidget {
       aspectRatio: 150 / 224,
       child: Container(
         decoration: const BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(20)),
+          borderRadius: BorderRadius.all(Radius.circular(17)),
           image: DecorationImage(
             fit: BoxFit.fill,
             image: AssetImage(AssetsData.bookIconTest),

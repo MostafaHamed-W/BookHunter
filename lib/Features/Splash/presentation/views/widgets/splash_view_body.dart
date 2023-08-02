@@ -34,7 +34,7 @@ class _SplashViewBodyState extends State<SplashViewBody> with TickerProviderStat
       //   duration: kTransitionDuration,
       // );
 
-      GoRouter.of(context).push(AppRouter.kHomeView);
+      GoRouter.of(context).pushReplacement(AppRouter.kHomeView);
     });
   }
 
