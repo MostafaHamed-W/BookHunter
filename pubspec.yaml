@@ -69,6 +69,9 @@ flutter:
     - family: Walkway
       fonts:
         - asset: assets/fonts/Walkway_SemiBold.ttf
+    - family: spectra
+      fonts:
+        - asset: assets/fonts/gt_spectra_fine.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

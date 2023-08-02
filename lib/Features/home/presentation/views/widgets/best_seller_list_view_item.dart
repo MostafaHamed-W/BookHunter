@@ -1,0 +1,60 @@
+import 'package:book_hunt/core/utils/assets.dart';
+import 'package:book_hunt/core/utils/styles.dart';
+import 'package:flutter/material.dart';
+
+import 'book_rating.dart';
+
+class BestSellerListViewItem extends StatelessWidget {
+  const BestSellerListViewItem({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(right: 24, left: 25, bottom: 20),
+      child: SizedBox(
+        height: 130,
+        width: double.infinity,
+        child: Row(
+          children: [
+            AspectRatio(
+              aspectRatio: 300 / 480,
+              child: Container(
+                decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(15)),
+                  image: DecorationImage(
+                    fit: BoxFit.fill,
+                    image: AssetImage(AssetsData.bookIconTest),
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(width: 30),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.5,
+                    child: Text(
+                      'Harry Potter and the Goblet of Fire',
+                      style: Styles.textStyle20.copyWith(
+                        fontFamily: AssetsData.kGspectraFine,
+                        fontWeight: FontWeight.normal,
+                      ),
+                      maxLines: 2,
+                    ),
+                  ),
+                  const SizedBox(height: 11),
+                  Text('J.K. Rowling',
+                      style: Styles.textStyle14.copyWith(color: Colors.white.withOpacity(0.7))),
+                  const SizedBox(height: 5),
+                  const BookRating(),
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
