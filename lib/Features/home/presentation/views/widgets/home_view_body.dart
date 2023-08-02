@@ -10,31 +10,32 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
+    return const SafeArea(
       child: Column(
         children: [
-          const CustomAppBar(),
-          const SizedBox(height: 30),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: SizedBox(
-              height: 200,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: const [
-                  CustomListViewItem(),
-                  SizedBox(width: 6),
-                  CustomListViewItem(),
-                  SizedBox(width: 6),
-                  CustomListViewItem(),
-                  SizedBox(width: 6),
-                  CustomListViewItem(),
-                ],
-              ),
-            ),
-          )
+          CustomAppBar(),
+          BooksListView(),
         ],
       ),
+    );
+  }
+}
+
+class BooksListView extends StatelessWidget {
+  const BooksListView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: MediaQuery.of(context).size.height * 0.33,
+      child: ListView.builder(
+          scrollDirection: Axis.horizontal,
+          itemBuilder: (context, index) {
+            return const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 8, vertical: 10),
+              child: CustomListViewItem(),
+            );
+          }),
     );
   }
 }

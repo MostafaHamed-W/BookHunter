@@ -17,7 +17,7 @@ class CustomAppBar extends StatelessWidget {
               fontFamily: AssetsData.splashFont,
               fontWeight: FontWeight.bold,
               letterSpacing: 0.4,
-              fontSize: 16,
+              fontSize: 19,
             ),
           ),
           const Spacer(),
