@@ -1,14 +1,20 @@
 import 'package:book_hunt/Features/home/presentation/views/widgets/book_rating.dart';
 import 'package:book_hunt/Features/preview/presentation/views/widgets/play_button.dart';
+import 'package:book_hunt/Features/preview/presentation/views/widgets/video_progress_line.dart';
+import 'package:book_hunt/Features/preview/presentation/views/widgets/video_time_text.dart';
 import 'package:book_hunt/core/utils/styles.dart';
 import 'package:flutter/material.dart';
-import 'dart:ui'; // Import this for using ImageFilter.blur
-import '../../../../../core/utils/assets.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'CustomBookPreviewPhoto.dart';
 
-class BookPreviewViewBody extends StatelessWidget {
+class BookPreviewViewBody extends StatefulWidget {
   const BookPreviewViewBody({super.key});
 
+  @override
+  State<BookPreviewViewBody> createState() => _BookPreviewViewBodyState();
+}
+
+class _BookPreviewViewBodyState extends State<BookPreviewViewBody> {
+  double videoProgress = 0.5;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -52,6 +58,10 @@ class BookPreviewViewBody extends StatelessWidget {
                         BookRating(),
                       ],
                     ),
+                    const SizedBox(height: 31),
+                    VideoProgressLine(progress: videoProgress),
+                    const SizedBox(height: 7),
+                    const VideoTimeText(seconds: 0)
                   ],
                 ),
               ),
@@ -61,27 +71,13 @@ class BookPreviewViewBody extends StatelessWidget {
         Positioned(
           bottom: MediaQuery.of(context).size.height * 0.3 - 65,
           left: MediaQuery.of(context).size.width * 0.5 - 40,
-          child: PlayButton(onPressed: () {}),
+          child: PlayButton(onPressed: () {
+            setState(() {
+              videoProgress = 0.8;
+            });
+          }),
         ),
       ],
-    );
-  }
-}
-
-class CustomBookPreviewPhoto extends StatelessWidget {
-  const CustomBookPreviewPhoto({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-        borderRadius:
-            BorderRadius.only(bottomRight: Radius.circular(20), bottomLeft: Radius.circular(20)),
-        image: DecorationImage(
-          fit: BoxFit.fill,
-          image: AssetImage(AssetsData.bookIconTest),
-        ),
-      ),
     );
   }
 }

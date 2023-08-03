@@ -43,7 +43,7 @@ class PlayButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       borderRadius: BorderRadius.circular(40),
-      onTap: () {},
+      onTap: onPressed,
       child: ClipRRect(
         borderRadius: BorderRadius.circular(40), // Half of 80 for rounded effect
         child: BackdropFilter(
