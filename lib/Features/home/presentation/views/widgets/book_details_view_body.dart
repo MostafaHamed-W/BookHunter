@@ -1,7 +1,9 @@
 import 'package:book_hunt/Features/home/presentation/views/widgets/book_rating.dart';
 import 'package:book_hunt/Features/home/presentation/views/widgets/custom_list_view_item.dart';
+import 'package:book_hunt/core/utils/app_router.dart';
 import 'package:book_hunt/core/utils/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import '../../../../../core/utils/assets.dart';
 import 'custom_book_details_appbar.dart';
 import 'custom_book_details_photo.dart';
@@ -115,7 +117,9 @@ class CustomBookDetailsButton extends StatelessWidget {
           ),
           Expanded(
             child: GestureDetector(
-              onTap: () {},
+              onTap: () {
+                GoRouter.of(context).push(AppRouter.kBookPreviewView);
+              },
               child: Container(
                 constraints: const BoxConstraints.expand(),
                 decoration: const BoxDecoration(
