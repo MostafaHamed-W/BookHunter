@@ -1,5 +1,7 @@
+import 'package:book_hunt/core/utils/app_router.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../../core/utils/styles.dart';
 import '../../../../../core/widgets/custom_Button.dart';
@@ -13,12 +15,13 @@ class BooksAction extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 37),
       child: Row(
         children: [
-          const Expanded(
+          Expanded(
             child: CustomButton(
+              onPressed: () {},
               buttonText: "19.99€",
               backgroundColor: Colors.white,
               textColor: Colors.black,
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(17),
                 bottomLeft: Radius.circular(17),
               ),
@@ -26,6 +29,9 @@ class BooksAction extends StatelessWidget {
           ),
           Expanded(
             child: CustomButton(
+              onPressed: () {
+                GoRouter.of(context).push(AppRouter.kBookPreviewView);
+              },
               buttonText: 'Free preview',
               backgroundColor: const Color(0xFFEF8262),
               textColor: Colors.white,
