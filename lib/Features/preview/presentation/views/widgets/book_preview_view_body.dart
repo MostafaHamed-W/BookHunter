@@ -53,11 +53,7 @@ class _BookPreviewViewBodyState extends State<BookPreviewViewBody> {
                       ],
                     ),
                     const SizedBox(height: 16),
-                    const Row(
-                      children: [
-                        BookRating(),
-                      ],
-                    ),
+                    const BookRating(),
                     const SizedBox(height: 31),
                     VideoProgressLine(progress: videoProgress),
                     const SizedBox(height: 7),
