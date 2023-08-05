@@ -32,7 +32,7 @@ class _BookPreviewViewBodyState extends State<BookPreviewViewBody> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const SizedBox(height: 61),
+                    const SizedBox(height: 40),
                     const Row(
                       children: [
                         Text(
@@ -52,9 +52,13 @@ class _BookPreviewViewBodyState extends State<BookPreviewViewBody> {
                         ),
                       ],
                     ),
-                    const SizedBox(height: 16),
-                    const BookRating(),
-                    const SizedBox(height: 31),
+                    const SizedBox(height: 7),
+                    const Row(
+                      children: [
+                        BookRating(),
+                      ],
+                    ),
+                    const SizedBox(height: 15),
                     VideoProgressLine(progress: videoProgress),
                     const SizedBox(height: 7),
                     const VideoTimeText(seconds: 0)
@@ -65,8 +69,8 @@ class _BookPreviewViewBodyState extends State<BookPreviewViewBody> {
           ],
         ),
         Positioned(
-          bottom: MediaQuery.of(context).size.height * 0.3 - 65,
-          left: MediaQuery.of(context).size.width * 0.5 - 40,
+          bottom: MediaQuery.of(context).size.height * 0.3 - 45,
+          left: MediaQuery.of(context).size.width * 0.5 - 30,
           child: PlayButton(onPressed: () {
             setState(() {
               videoProgress = 0.8;

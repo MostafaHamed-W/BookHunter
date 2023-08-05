@@ -3,7 +3,6 @@ import 'package:book_hunt/Features/home/presentation/views/widgets/custom_book_i
 import 'package:book_hunt/Features/home/presentation/views/widgets/similar_books_listview.dart';
 import 'package:book_hunt/core/utils/styles.dart';
 import 'package:flutter/material.dart';
-import '../../../../../core/utils/assets.dart';
 import 'books_actions.dart';
 import 'custom_book_details_appbar.dart';
 
@@ -15,14 +14,14 @@ class BookDetailsViewBody extends StatelessWidget {
     return Column(
       children: [
         const CustomBookDetailsAppBar(),
-        const SizedBox(height: 36),
+        const Spacer(flex: 1),
         SizedBox(
           width: MediaQuery.of(context).size.width * 0.45,
           child: const CustomBookImage(),
         ),
         const SizedBox(height: 34),
         const Text('The Jungle Book', style: Styles.textStyle30),
-        const SizedBox(height: 15),
+        const Spacer(flex: 1),
         Text(
           'Rudyard Kipling',
           style: Styles.textStyle18.copyWith(color: Colors.white.withOpacity(0.7)),
@@ -31,9 +30,9 @@ class BookDetailsViewBody extends StatelessWidget {
         const BookRating(
           mainAxisAlignment: MainAxisAlignment.center,
         ),
-        const SizedBox(height: 37),
+        const Spacer(flex: 1),
         const BooksAction(),
-        const SizedBox(height: 50),
+        const Spacer(flex: 1),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 30),
           child: Align(
@@ -44,8 +43,9 @@ class BookDetailsViewBody extends StatelessWidget {
             ),
           ),
         ),
-        const SizedBox(height: 16),
-        const SimilarBooksListview()
+        const Spacer(flex: 1),
+        const SimilarBooksListview(),
+        const Spacer(flex: 1),
       ],
     );
   }
