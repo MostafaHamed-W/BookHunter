@@ -1,12 +1,11 @@
 import 'package:book_hunt/Features/home/presentation/views/widgets/book_rating.dart';
-import 'package:book_hunt/Features/home/presentation/views/widgets/custom_list_view_item.dart';
+import 'package:book_hunt/Features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:book_hunt/core/utils/app_router.dart';
 import 'package:book_hunt/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../../core/utils/assets.dart';
 import 'custom_book_details_appbar.dart';
-import 'custom_book_details_photo.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
   const BookDetailsViewBody({super.key});
@@ -17,7 +16,10 @@ class BookDetailsViewBody extends StatelessWidget {
       children: [
         const CustomBookDetailsAppBar(),
         const SizedBox(height: 36),
-        const CustomBookDetailsPhoto(),
+        SizedBox(
+          width: MediaQuery.of(context).size.width * 0.45,
+          child: const CustomBookImage(),
+        ),
         const Padding(
           padding: EdgeInsets.symmetric(vertical: 34),
           child: Text('The Jungle Book', style: Styles.textStyle30),
@@ -51,7 +53,7 @@ class BookDetailsViewBody extends StatelessWidget {
               itemBuilder: (context, index) {
                 return const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 5),
-                  child: CustomListViewItem(),
+                  child: CustomBookImage(),
                 );
               }),
         )
