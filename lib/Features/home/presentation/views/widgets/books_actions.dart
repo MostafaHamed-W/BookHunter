@@ -35,8 +35,8 @@ class BooksAction extends StatelessWidget {
               buttonText: 'Free preview',
               backgroundColor: const Color(0xFFEF8262),
               textColor: Colors.white,
-              textStyle:
-                  Styles.textStyle16.copyWith(fontWeight: FontWeight.w600, color: Colors.white),
+              textStyle: Styles.textStyle16
+                  .copyWith(fontWeight: FontWeight.w600, color: Colors.white),
               borderRadius: const BorderRadius.only(
                 topRight: Radius.circular(17),
                 bottomRight: Radius.circular(17),

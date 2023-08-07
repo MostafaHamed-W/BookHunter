@@ -1,4 +1,3 @@
-import 'package:book_hunt/Features/home/presentation/views/widgets/book_listview_item.dart';
 import 'package:book_hunt/Features/search/presentation/views/widgets/search_result_listview.dart';
 import 'package:flutter/material.dart';
 

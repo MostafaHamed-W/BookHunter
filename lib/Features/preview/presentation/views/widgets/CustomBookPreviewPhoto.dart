@@ -9,8 +9,8 @@ class CustomBookPreviewPhoto extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
-        borderRadius:
-            BorderRadius.only(bottomRight: Radius.circular(20), bottomLeft: Radius.circular(20)),
+        borderRadius: BorderRadius.only(
+            bottomRight: Radius.circular(20), bottomLeft: Radius.circular(20)),
         image: DecorationImage(
           fit: BoxFit.fill,
           image: AssetImage(AssetsData.bookIconTest),

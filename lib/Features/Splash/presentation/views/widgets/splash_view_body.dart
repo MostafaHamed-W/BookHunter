@@ -11,7 +11,8 @@ class SplashViewBody extends StatefulWidget {
   State<SplashViewBody> createState() => _SplashViewBodyState();
 }
 
-class _SplashViewBodyState extends State<SplashViewBody> with TickerProviderStateMixin {
+class _SplashViewBodyState extends State<SplashViewBody>
+    with TickerProviderStateMixin {
   late AnimationController textAnimationController;
   late Animation<Offset> textSlidingAnimation;
 
@@ -61,7 +62,8 @@ class _SplashViewBodyState extends State<SplashViewBody> with TickerProviderStat
     textAnimationController =
         AnimationController(vsync: this, duration: const Duration(seconds: 1));
     textSlidingAnimation =
-        Tween<Offset>(begin: const Offset(0, 4), end: Offset.zero).animate(textAnimationController);
+        Tween<Offset>(begin: const Offset(0, 4), end: Offset.zero)
+            .animate(textAnimationController);
     textAnimationController.forward();
 
     logoAnimationController =

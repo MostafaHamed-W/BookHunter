@@ -24,7 +24,8 @@ class BookDetailsViewBody extends StatelessWidget {
         const Spacer(flex: 1),
         Text(
           'Rudyard Kipling',
-          style: Styles.textStyle18.copyWith(color: Colors.white.withOpacity(0.7)),
+          style:
+              Styles.textStyle18.copyWith(color: Colors.white.withOpacity(0.7)),
         ),
         const SizedBox(height: 16),
         const BookRating(

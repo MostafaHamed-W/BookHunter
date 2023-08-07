@@ -36,7 +36,8 @@ class CustomButton extends StatelessWidget {
           child: Text(
             buttonText,
             style: textStyle ??
-                Styles.textStyle20.copyWith(color: textColor, fontWeight: FontWeight.bold),
+                Styles.textStyle20
+                    .copyWith(color: textColor, fontWeight: FontWeight.bold),
           ),
         ),
       ),
@@ -44,27 +45,26 @@ class CustomButton extends StatelessWidget {
   }
 }
 
-
- // Expanded(
-        //   child: GestureDetector(
-        //     onTap: () {
-        //       GoRouter.of(context).push(AppRouter.kBookPreviewView);
-        //     },
-        //     child: Container(
-        //       constraints: const BoxConstraints.expand(),
-        //       decoration: const BoxDecoration(
-        //         borderRadius: BorderRadius.only(
-        //           topRight: Radius.circular(17),
-        //           bottomRight: Radius.circular(17),
-        //         ),
-        //         color: Color(0xFFEF8262),
-        //       ),
-        //       child: Center(
-        //         child: Text(
-        //           'Free perview',
-        //           style: Styles.textStyle16.copyWith(fontWeight: FontWeight.w600),
-        //         ),
-        //       ),
-        //     ),
-        //   ),
-        // )
+// Expanded(
+//   child: GestureDetector(
+//     onTap: () {
+//       GoRouter.of(context).push(AppRouter.kBookPreviewView);
+//     },
+//     child: Container(
+//       constraints: const BoxConstraints.expand(),
+//       decoration: const BoxDecoration(
+//         borderRadius: BorderRadius.only(
+//           topRight: Radius.circular(17),
+//           bottomRight: Radius.circular(17),
+//         ),
+//         color: Color(0xFFEF8262),
+//       ),
+//       child: Center(
+//         child: Text(
+//           'Free perview',
+//           style: Styles.textStyle16.copyWith(fontWeight: FontWeight.w600),
+//         ),
+//       ),
+//     ),
+//   ),
+// )

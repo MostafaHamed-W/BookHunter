@@ -8,7 +8,8 @@ void main() {
   // change status bar and navigation bar color to black
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
       statusBarColor: Colors.black,
-      systemNavigationBarColor: Colors.black // Replace 'Colors.blue' with the color you desire
+      systemNavigationBarColor:
+          Colors.black // Replace 'Colors.blue' with the color you desire
       ));
   runApp(const BookHunter());
 }

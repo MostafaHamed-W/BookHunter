@@ -52,7 +52,8 @@ class BookListViewItem extends StatelessWidget {
                     ),
                     const SizedBox(height: 11),
                     Text('J.K. Rowling',
-                        style: Styles.textStyle14.copyWith(color: Colors.white.withOpacity(0.7))),
+                        style: Styles.textStyle14
+                            .copyWith(color: Colors.white.withOpacity(0.7))),
                     const SizedBox(height: 5),
                     const Row(
                       children: [
