@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
+import 'package:go_router/go_router.dart';
 
+import '../../../../../core/utils/app_router.dart';
 import '../../../../../core/utils/assets.dart';
 
 class CustomAppBar extends StatelessWidget {
@@ -22,7 +24,9 @@ class CustomAppBar extends StatelessWidget {
           ),
           const Spacer(),
           GestureDetector(
-            onTap: () {},
+            onTap: () {
+              GoRouter.of(context).push(AppRouter.kSearchView);
+            },
             child: Image.asset(
               AssetsData.searchIcon,
               height: 23,

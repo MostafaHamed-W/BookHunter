@@ -1,7 +1,6 @@
-import 'package:book_hunt/Features/home/presentation/views/widgets/best_seller_list_view_item.dart';
+import 'package:book_hunt/Features/home/presentation/views/widgets/book_listview_item.dart';
 import 'package:book_hunt/core/utils/styles.dart';
 import 'package:flutter/material.dart';
-import 'best_seller_list_view.dart';
 import 'books_list_view.dart';
 import 'custom_app_bar.dart';
 
@@ -30,7 +29,7 @@ class HomeViewBody extends StatelessWidget {
         ),
         SliverList(
           delegate: SliverChildBuilderDelegate((context, index) {
-            return const BestSellerListViewItem();
+            return const BookListViewItem();
           }, childCount: 20),
         )
       ],
