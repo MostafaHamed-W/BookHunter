@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../utils/styles.dart';
@@ -36,8 +35,7 @@ class CustomButton extends StatelessWidget {
           child: Text(
             buttonText,
             style: textStyle ??
-                Styles.textStyle20
-                    .copyWith(color: textColor, fontWeight: FontWeight.bold),
+                Styles.textStyle20.copyWith(color: textColor, fontWeight: FontWeight.bold),
           ),
         ),
       ),

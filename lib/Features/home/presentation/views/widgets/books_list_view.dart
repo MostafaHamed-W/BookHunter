@@ -1,9 +1,5 @@
 import 'package:book_hunt/Features/home/presentation/manager/featured_books_cubit/featured_books_cubit.dart';
-import 'package:book_hunt/core/errors/failures.dart';
-import 'package:book_hunt/core/utils/styles.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import '../../../../../core/utils/custom_error_widget.dart';
 import 'custom_book_image.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

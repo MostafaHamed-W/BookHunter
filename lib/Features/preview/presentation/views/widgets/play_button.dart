@@ -30,8 +30,6 @@
 // Import this for using ImageFilter.blur
 
 import 'dart:ui';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class PlayButton extends StatelessWidget {
@@ -45,11 +43,9 @@ class PlayButton extends StatelessWidget {
       borderRadius: BorderRadius.circular(40),
       onTap: onPressed,
       child: ClipRRect(
-        borderRadius:
-            BorderRadius.circular(40), // Half of 80 for rounded effect
+        borderRadius: BorderRadius.circular(40), // Half of 80 for rounded effect
         child: BackdropFilter(
-          filter: ImageFilter.blur(
-              sigmaX: 5.0, sigmaY: 5.0), // Adjust the blur sigma as needed
+          filter: ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0), // Adjust the blur sigma as needed
           child: Container(
             width: 60,
             height: 60,

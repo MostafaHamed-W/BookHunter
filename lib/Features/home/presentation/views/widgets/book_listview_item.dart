@@ -3,7 +3,7 @@ import 'package:book_hunt/core/utils/assets.dart';
 import 'package:book_hunt/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-
+import 'package:cached_network_image/cached_network_image.dart';
 import 'book_rating.dart';
 
 class BestSellerBookListViewItem extends StatelessWidget {
@@ -25,17 +25,15 @@ class BestSellerBookListViewItem extends StatelessWidget {
           width: double.infinity,
           child: Row(
             children: [
-              AspectRatio(
-                aspectRatio: 300 / 480,
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: const BorderRadius.all(Radius.circular(15)),
-                    image: DecorationImage(
+              ClipRRect(
+                borderRadius: BorderRadius.circular(15),
+                child: AspectRatio(
+                    aspectRatio: 300 / 480,
+                    child: CachedNetworkImage(
+                      imageUrl: imgUrl,
+                      errorWidget: (context, url, error) => const Icon(Icons.close),
                       fit: BoxFit.fill,
-                      image: NetworkImage(imgUrl),
-                    ),
-                  ),
-                ),
+                    )),
               ),
               const SizedBox(width: 30),
               Expanded(
@@ -45,7 +43,7 @@ class BestSellerBookListViewItem extends StatelessWidget {
                     SizedBox(
                       width: MediaQuery.of(context).size.width * 0.5,
                       child: Text(
-                        bookName!,
+                        bookName,
                         style: Styles.textStyle20.copyWith(
                           fontFamily: AssetsData.kGspectraFine,
                           fontWeight: FontWeight.normal,

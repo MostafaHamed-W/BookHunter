@@ -4,6 +4,7 @@ import 'package:book_hunt/core/errors/failures.dart';
 import 'package:book_hunt/core/utils/api_service.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
 
 class HomeRepoImpl extends HomeRepo {
   final ApiService apiService;
@@ -19,7 +20,7 @@ class HomeRepoImpl extends HomeRepo {
         try {
           books.add(BookModel.fromJson(item));
         } catch (e) {
-          print(e.toString());
+          debugPrint(e.toString());
         }
       }
       return right(books);
@@ -39,7 +40,9 @@ class HomeRepoImpl extends HomeRepo {
       for (var item in data['items']) {
         try {
           books.add(BookModel.fromJson(item));
-        } catch (e) {}
+        } catch (e) {
+          debugPrint(e.toString());
+        }
       }
       return right(books);
     } catch (e) {
