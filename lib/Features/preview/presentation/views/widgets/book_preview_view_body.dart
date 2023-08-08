@@ -4,7 +4,7 @@ import 'package:book_hunt/Features/preview/presentation/views/widgets/video_prog
 import 'package:book_hunt/Features/preview/presentation/views/widgets/video_time_text.dart';
 import 'package:book_hunt/core/utils/styles.dart';
 import 'package:flutter/material.dart';
-import 'CustomBookPreviewPhoto.dart';
+import 'custom_book_preview_photo.dart';
 
 class BookPreviewViewBody extends StatefulWidget {
   const BookPreviewViewBody({super.key});
