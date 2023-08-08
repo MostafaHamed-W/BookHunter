@@ -9,3 +9,8 @@ class ApiService {
     return response.data;
   }
 }
+
+
+// wrap get method with my custom apiService 
+// if i want to edit or test all get methods in the app in the future
+// i can edit custom get that in apiService i created
