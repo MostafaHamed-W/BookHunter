@@ -18,6 +18,7 @@ class SimilarBooksListview extends StatelessWidget {
             return const Padding(
               padding: EdgeInsets.symmetric(horizontal: 5),
               child: CustomBookImage(
+                imageUrl: 'https://edit.org/images/cat/book-covers-big-2019101610.jpg',
                 aspectRatio: 70 / 112,
               ),
             );
