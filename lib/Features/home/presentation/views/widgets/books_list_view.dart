@@ -4,6 +4,7 @@ import 'package:book_hunt/core/utils/styles.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../../core/utils/custom_error_widget.dart';
 import 'custom_book_image.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -37,21 +38,6 @@ class FeaturedBooksListView extends StatelessWidget {
           }
         },
       ),
-    );
-  }
-}
-
-class CustomErrorWidget extends StatelessWidget {
-  const CustomErrorWidget({
-    super.key,
-    required this.errMessage,
-  });
-  final String errMessage;
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      errMessage,
-      style: Styles.textStyle18,
     );
   }
 }

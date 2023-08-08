@@ -10,7 +10,11 @@ class SearchResultListView extends StatelessWidget {
     return ListView.builder(
         itemCount: 10,
         itemBuilder: (context, index) {
-          return const BookListViewItem();
+          return const BestSellerBookListViewItem(
+            author: [],
+            bookName: 'Harry Potter and the Goblet of Fire',
+            imgUrl: '',
+          );
         });
   }
 }

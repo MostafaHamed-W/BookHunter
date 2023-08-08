@@ -21,7 +21,7 @@ void main() {
       systemNavigationBarColor: Colors.black // Replace 'Colors.blue' with the color you desire
       ));
 
-  Bloc.observer = SimpleBlocObserver();
+  // Bloc.observer = SimpleBlocObserver();
 
   runApp(const BookHunter());
 }
@@ -41,7 +41,7 @@ class BookHunter extends StatelessWidget {
         BlocProvider(
           create: (context) => NewestBooksCubit(
             getIt.get<HomeRepoImpl>(),
-          ),
+          )..fetchNewestBooks(),
         )
       ],
       child: MaterialApp.router(

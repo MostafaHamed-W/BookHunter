@@ -6,9 +6,12 @@ import 'package:go_router/go_router.dart';
 
 import 'book_rating.dart';
 
-class BookListViewItem extends StatelessWidget {
-  const BookListViewItem({super.key});
-
+class BestSellerBookListViewItem extends StatelessWidget {
+  const BestSellerBookListViewItem(
+      {super.key, required this.imgUrl, required this.bookName, required this.author});
+  final String imgUrl;
+  final String bookName;
+  final List<String> author;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -25,11 +28,11 @@ class BookListViewItem extends StatelessWidget {
               AspectRatio(
                 aspectRatio: 300 / 480,
                 child: Container(
-                  decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(15)),
+                  decoration: BoxDecoration(
+                    borderRadius: const BorderRadius.all(Radius.circular(15)),
                     image: DecorationImage(
                       fit: BoxFit.fill,
-                      image: AssetImage(AssetsData.bookIconTest),
+                      image: NetworkImage(imgUrl),
                     ),
                   ),
                 ),
@@ -42,7 +45,7 @@ class BookListViewItem extends StatelessWidget {
                     SizedBox(
                       width: MediaQuery.of(context).size.width * 0.5,
                       child: Text(
-                        'Harry Potter and the Goblet of Fire',
+                        bookName!,
                         style: Styles.textStyle20.copyWith(
                           fontFamily: AssetsData.kGspectraFine,
                           fontWeight: FontWeight.normal,
@@ -51,13 +54,15 @@ class BookListViewItem extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 11),
-                    Text('J.K. Rowling',
-                        style: Styles.textStyle14
-                            .copyWith(color: Colors.white.withOpacity(0.7))),
+                    Text(author[0],
+                        style: Styles.textStyle14.copyWith(color: Colors.white.withOpacity(0.7))),
                     const SizedBox(height: 5),
                     const Row(
                       children: [
-                        Text('19.99 €', style: Styles.textStyle20),
+                        Text(
+                            // '19.99 €'
+                            'Free',
+                            style: Styles.textStyle20),
                         Spacer(
                           flex: 8,
                         ),
