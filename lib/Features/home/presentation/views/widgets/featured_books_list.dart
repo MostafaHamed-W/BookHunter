@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
 import '../../../../../core/utils/styles.dart';
-import 'books_list_view.dart';
+import 'featured_books_list_view.dart';
 import 'custom_app_bar.dart';
 
 class FeaturedBooksList extends StatelessWidget {

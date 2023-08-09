@@ -1,4 +1,5 @@
 import 'package:book_hunt/Features/home/presentation/manager/featured_books_cubit/featured_books_cubit.dart';
+import 'package:book_hunt/Features/home/presentation/views/widgets/shimmers.dart';
 import 'package:flutter/material.dart';
 import '../../../../../core/utils/custom_error_widget.dart';
 import 'custom_book_image.dart';
@@ -22,16 +23,17 @@ class FeaturedBooksListView extends StatelessWidget {
                   return Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 10),
                     child: CustomBookImage(
-                        imageUrl: state.books[index].volumeInfo.imageLinks.thumbnail),
+                        imageUrl: state.books[index].volumeInfo.imageLinks?.thumbnail ?? 'url'),
                   );
                 });
           } else if (state is FeaturedBooksFailure) {
             debugPrint(state.errMessage);
-            return CustomErrorWidget(errMessage: state.errMessage);
+            return Center(child: CustomErrorWidget(errMessage: state.errMessage));
           } else {
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
+            return const FeaturedBooksListShimmer();
+            // const Center(
+            //   child: CircularProgressIndicator(),
+            // );
           }
         },
       ),

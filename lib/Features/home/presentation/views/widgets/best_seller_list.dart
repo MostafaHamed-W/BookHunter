@@ -1,5 +1,7 @@
+import 'package:book_hunt/Features/home/presentation/views/widgets/shimmers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shimmer/shimmer.dart';
 import '../../../../../core/utils/custom_error_widget.dart';
 import '../../manager/newest_books_cubit/newest_books_cubit.dart';
 import 'book_listview_item.dart';
@@ -28,15 +30,13 @@ class BestSellerBooksList extends StatelessWidget {
           return SliverList(
             delegate: SliverChildListDelegate(
               [
-                CustomErrorWidget(errMessage: state.errMessage),
+                Center(child: CustomErrorWidget(errMessage: state.errMessage)),
               ],
             ),
           );
         } else {
-          return SliverList(
-            delegate: SliverChildListDelegate(
-              [const Center(child: CircularProgressIndicator())],
-            ),
+          return const SliverFillRemaining(
+            child: NewestBooksListShimmer(),
           );
         }
       },

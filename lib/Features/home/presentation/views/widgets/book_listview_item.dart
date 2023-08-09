@@ -25,7 +25,7 @@ class BestSellerBookListViewItem extends StatelessWidget {
           child: Row(
             children: [
               CustomBookImage(
-                imageUrl: bookModel.volumeInfo.imageLinks.thumbnail,
+                imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail ?? 'url',
                 aspectRatio: 300 / 480,
               ),
               const SizedBox(width: 30),
