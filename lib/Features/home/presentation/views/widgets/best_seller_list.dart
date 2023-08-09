@@ -19,9 +19,7 @@ class BestSellerBooksList extends StatelessWidget {
               childCount: state.books.length,
               (context, index) {
                 return BestSellerBookListViewItem(
-                  author: state.books[index].volumeInfo.authors,
-                  bookName: state.books[index].volumeInfo.title,
-                  imgUrl: state.books[index].volumeInfo.imageLinks.thumbnail,
+                  bookModel: state.books[index],
                 );
               },
             ),

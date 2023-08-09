@@ -1,3 +1,5 @@
+import 'package:book_hunt/Features/home/data/book_model/book_model.dart';
+import 'package:book_hunt/Features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:book_hunt/core/utils/app_router.dart';
 import 'package:book_hunt/core/utils/assets.dart';
 import 'package:book_hunt/core/utils/styles.dart';
@@ -7,11 +9,8 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'book_rating.dart';
 
 class BestSellerBookListViewItem extends StatelessWidget {
-  const BestSellerBookListViewItem(
-      {super.key, required this.imgUrl, required this.bookName, required this.author});
-  final String imgUrl;
-  final String bookName;
-  final List<String> author;
+  const BestSellerBookListViewItem({super.key, required this.bookModel});
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -25,15 +24,9 @@ class BestSellerBookListViewItem extends StatelessWidget {
           width: double.infinity,
           child: Row(
             children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(15),
-                child: AspectRatio(
-                    aspectRatio: 300 / 480,
-                    child: CachedNetworkImage(
-                      imageUrl: imgUrl,
-                      errorWidget: (context, url, error) => const Icon(Icons.close),
-                      fit: BoxFit.fill,
-                    )),
+              CustomBookImage(
+                imageUrl: bookModel.volumeInfo.imageLinks.thumbnail,
+                aspectRatio: 300 / 480,
               ),
               const SizedBox(width: 30),
               Expanded(
@@ -43,7 +36,7 @@ class BestSellerBookListViewItem extends StatelessWidget {
                     SizedBox(
                       width: MediaQuery.of(context).size.width * 0.5,
                       child: Text(
-                        bookName,
+                        bookModel.volumeInfo.title,
                         style: Styles.textStyle20.copyWith(
                           fontFamily: AssetsData.kGspectraFine,
                           fontWeight: FontWeight.normal,
@@ -52,7 +45,7 @@ class BestSellerBookListViewItem extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 11),
-                    Text(author[0],
+                    Text(bookModel.volumeInfo.authors[0],
                         style: Styles.textStyle14.copyWith(color: Colors.white.withOpacity(0.7))),
                     const SizedBox(height: 5),
                     const Row(

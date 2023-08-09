@@ -26,6 +26,7 @@ class FeaturedBooksListView extends StatelessWidget {
                   );
                 });
           } else if (state is FeaturedBooksFailure) {
+            debugPrint(state.errMessage);
             return CustomErrorWidget(errMessage: state.errMessage);
           } else {
             return const Center(
