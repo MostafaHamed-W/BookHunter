@@ -5,7 +5,6 @@ import 'package:book_hunt/core/utils/assets.dart';
 import 'package:book_hunt/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'book_rating.dart';
 
 class BestSellerBookListViewItem extends StatelessWidget {
@@ -17,7 +16,7 @@ class BestSellerBookListViewItem extends StatelessWidget {
       padding: const EdgeInsets.only(right: 24, left: 25, bottom: 20),
       child: GestureDetector(
         onTap: () {
-          GoRouter.of(context).push(AppRouter.kBookDetailsView);
+          GoRouter.of(context).push(AppRouter.kBookDetailsView, extra: bookModel);
         },
         child: SizedBox(
           height: 130,

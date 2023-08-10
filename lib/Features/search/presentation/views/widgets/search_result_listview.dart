@@ -1,7 +1,5 @@
-import 'package:book_hunt/Features/home/data/book_model/book_model.dart';
 import 'package:book_hunt/Features/home/presentation/manager/newest_books_cubit/newest_books_cubit.dart';
 import 'package:book_hunt/core/utils/custom_error_widget.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

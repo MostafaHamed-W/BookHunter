@@ -1,9 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
-import '../../../../../core/utils/assets.dart';
 import '../../../../../core/utils/styles.dart';
-import 'book_rating.dart';
 
 class NewestBooksListShimmer extends StatelessWidget {
   const NewestBooksListShimmer({super.key});

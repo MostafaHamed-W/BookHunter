@@ -1,3 +1,4 @@
+import 'package:book_hunt/Features/home/data/book_model/book_model.dart';
 import 'package:book_hunt/Features/home/presentation/views/widgets/book_rating.dart';
 import 'package:book_hunt/Features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:book_hunt/Features/home/presentation/views/widgets/similar_books_listview.dart';
@@ -7,7 +8,8 @@ import 'books_actions.dart';
 import 'custom_book_details_appbar.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
-  const BookDetailsViewBody({super.key});
+  const BookDetailsViewBody({super.key, required this.bookModel});
+  final BookModel bookModel;
 
   @override
   Widget build(BuildContext context) {
@@ -17,14 +19,13 @@ class BookDetailsViewBody extends StatelessWidget {
         const Spacer(flex: 1),
         SizedBox(
           width: MediaQuery.of(context).size.width * 0.45,
-          child: const CustomBookImage(
-              imageUrl: 'https://edit.org/images/cat/book-covers-big-2019101610.jpg'),
+          child: CustomBookImage(imageUrl: bookModel.volumeInfo.imageLinks!.thumbnail),
         ),
         const SizedBox(height: 34),
-        const Text('The Jungle Book', style: Styles.textStyle30),
+        Text(bookModel.volumeInfo.title, style: Styles.textStyle30),
         const Spacer(flex: 1),
         Text(
-          'Rudyard Kipling',
+          bookModel.volumeInfo.authors[0],
           style: Styles.textStyle18.copyWith(color: Colors.white.withOpacity(0.7)),
         ),
         const SizedBox(height: 16),
