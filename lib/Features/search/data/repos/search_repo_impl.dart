@@ -13,7 +13,7 @@ class SearchRepoImpl extends SearchRepo {
   Future<Either<Failure, List<BookModel>>> searchBook({required String searchText}) async {
     try {
       var data = await apiService.get(
-        endPoint: 'https://www.googleapis.com/books/v1/volumes?Filtering=free-ebooks&q=$searchText',
+        endPoint: 'volumes?Filtering=free-ebooks&q=$searchText',
       );
       List<BookModel> books = [];
       for (var item in data['items']) {
@@ -24,6 +24,7 @@ class SearchRepoImpl extends SearchRepo {
       if (e is DioError) {
         return Left(ServerFailure.fromDioError(e));
       } else {
+        print(e.toString());
         return Left(ServerFailure(e.toString()));
       }
     }

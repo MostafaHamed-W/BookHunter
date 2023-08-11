@@ -3,8 +3,12 @@ import 'package:book_hunt/Features/home/presentation/manager/similar_books_cubit
 import 'package:book_hunt/Features/home/presentation/views/book_details_view.dart';
 import 'package:book_hunt/Features/home/presentation/views/home_view.dart';
 import 'package:book_hunt/Features/preview/presentation/views/book_preview_view.dart';
+import 'package:book_hunt/Features/search/data/repos/search_repo.dart';
+import 'package:book_hunt/Features/search/data/repos/search_repo_impl.dart';
+import 'package:book_hunt/Features/search/presentation/manager/cubit/search_book_cubit.dart';
 import 'package:book_hunt/Features/search/presentation/views/search_view.dart';
 import 'package:book_hunt/Features/splash/presentation/views/splash_view.dart';
+import 'package:book_hunt/core/utils/api_service.dart';
 import 'package:book_hunt/core/utils/service_locator.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -41,7 +45,10 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: kSearchView,
-        builder: (context, state) => const SearchView(),
+        builder: (context, state) => BlocProvider(
+          create: (context) => SearchBookCubit(SearchRepoImpl(getIt.get<ApiService>())),
+          child: const SearchView(),
+        ),
       )
     ],
   );

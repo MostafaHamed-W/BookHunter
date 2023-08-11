@@ -43,7 +43,7 @@ class _BookPreviewViewBodyState extends State<BookPreviewViewBody> {
                     Row(
                       children: [
                         Text(
-                          widget.bookModel.volumeInfo.authors[0],
+                          widget.bookModel.volumeInfo.authors?[0] ?? 'Anonymous',
                           style: Styles.textStyle18.copyWith(
                             color: Colors.white.withOpacity(0.7),
                           ),

@@ -29,7 +29,7 @@ class BookDetailsViewBody extends StatelessWidget {
         ),
         const Spacer(flex: 1),
         Text(
-          bookModel.volumeInfo.authors[0],
+          bookModel.volumeInfo.authors?[0] ?? 'Anonymous',
           textAlign: TextAlign.center,
           style: Styles.textStyle18.copyWith(color: Colors.white.withOpacity(0.7)),
         ),

@@ -44,7 +44,7 @@ class BestSellerBookListViewItem extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 11),
-                    Text(bookModel.volumeInfo.authors[0],
+                    Text(bookModel.volumeInfo.authors?[0] ?? 'Anonymous',
                         style: Styles.textStyle14.copyWith(color: Colors.white.withOpacity(0.7))),
                     const SizedBox(height: 5),
                     Row(
