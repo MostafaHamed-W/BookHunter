@@ -47,7 +47,7 @@ class BestSellerBookListViewItem extends StatelessWidget {
                     Text(bookModel.volumeInfo.authors[0],
                         style: Styles.textStyle14.copyWith(color: Colors.white.withOpacity(0.7))),
                     const SizedBox(height: 5),
-                    const Row(
+                    Row(
                       children: [
                         Text(
                             // '19.99 €'
@@ -56,7 +56,10 @@ class BestSellerBookListViewItem extends StatelessWidget {
                         Spacer(
                           flex: 8,
                         ),
-                        BookRating(),
+                        BookRating(
+                          avgRating: bookModel.volumeInfo.averageRating ?? 0,
+                          ratingCount: bookModel.volumeInfo.ratingsCount ?? 0,
+                        ),
                         Spacer(flex: 3)
                       ],
                     )

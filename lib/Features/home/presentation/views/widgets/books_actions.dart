@@ -1,3 +1,4 @@
+import 'package:book_hunt/Features/home/data/book_model/book_model.dart';
 import 'package:book_hunt/core/utils/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -6,8 +7,8 @@ import '../../../../../core/utils/styles.dart';
 import '../../../../../core/widgets/custom_button.dart';
 
 class BooksAction extends StatelessWidget {
-  const BooksAction({super.key});
-
+  const BooksAction({super.key, required this.bookModel});
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -17,7 +18,7 @@ class BooksAction extends StatelessWidget {
           Expanded(
             child: CustomButton(
               onPressed: () {},
-              buttonText: "19.99€",
+              buttonText: "Read",
               backgroundColor: Colors.white,
               textColor: Colors.black,
               borderRadius: const BorderRadius.only(
@@ -29,13 +30,13 @@ class BooksAction extends StatelessWidget {
           Expanded(
             child: CustomButton(
               onPressed: () {
-                GoRouter.of(context).push(AppRouter.kBookPreviewView);
+                GoRouter.of(context).push(AppRouter.kBookPreviewView, extra: bookModel);
               },
-              buttonText: 'Free preview',
+              buttonText: 'Play',
               backgroundColor: const Color(0xFFEF8262),
               textColor: Colors.white,
               textStyle:
-                  Styles.textStyle16.copyWith(fontWeight: FontWeight.w600, color: Colors.white),
+                  Styles.textStyle20.copyWith(fontWeight: FontWeight.w600, color: Colors.white),
               borderRadius: const BorderRadius.only(
                 topRight: Radius.circular(17),
                 bottomRight: Radius.circular(17),

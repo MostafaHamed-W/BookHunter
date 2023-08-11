@@ -22,18 +22,25 @@ class BookDetailsViewBody extends StatelessWidget {
           child: CustomBookImage(imageUrl: bookModel.volumeInfo.imageLinks!.thumbnail),
         ),
         const SizedBox(height: 34),
-        Text(bookModel.volumeInfo.title, style: Styles.textStyle30),
+        Text(
+          bookModel.volumeInfo.title,
+          style: Styles.textStyle30,
+          textAlign: TextAlign.center,
+        ),
         const Spacer(flex: 1),
         Text(
           bookModel.volumeInfo.authors[0],
+          textAlign: TextAlign.center,
           style: Styles.textStyle18.copyWith(color: Colors.white.withOpacity(0.7)),
         ),
         const SizedBox(height: 16),
-        const BookRating(
+        BookRating(
           mainAxisAlignment: MainAxisAlignment.center,
+          avgRating: bookModel.volumeInfo.averageRating ?? 0,
+          ratingCount: bookModel.volumeInfo.ratingsCount ?? 0,
         ),
         const Spacer(flex: 1),
-        const BooksAction(),
+        BooksAction(bookModel: bookModel),
         const Spacer(flex: 1),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 30),

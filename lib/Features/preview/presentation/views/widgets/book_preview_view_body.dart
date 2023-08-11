@@ -1,3 +1,4 @@
+import 'package:book_hunt/Features/home/data/book_model/book_model.dart';
 import 'package:book_hunt/Features/home/presentation/views/widgets/book_rating.dart';
 import 'package:book_hunt/Features/preview/presentation/views/widgets/play_button.dart';
 import 'package:book_hunt/Features/preview/presentation/views/widgets/video_progress_line.dart';
@@ -7,23 +8,24 @@ import 'package:flutter/material.dart';
 import 'custom_book_preview_photo.dart';
 
 class BookPreviewViewBody extends StatefulWidget {
-  const BookPreviewViewBody({super.key});
+  const BookPreviewViewBody({super.key, required this.bookModel});
+  final BookModel bookModel;
 
   @override
   State<BookPreviewViewBody> createState() => _BookPreviewViewBodyState();
 }
 
 class _BookPreviewViewBodyState extends State<BookPreviewViewBody> {
-  double videoProgress = 0.5;
+  double videoProgress = 0;
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
         Column(
           children: [
-            const Expanded(
+            Expanded(
               flex: 7,
-              child: CustomBookPreviewPhoto(),
+              child: CustomBookPreviewPhoto(bookModel: widget.bookModel),
             ),
             Expanded(
               flex: 3,
@@ -33,19 +35,15 @@ class _BookPreviewViewBodyState extends State<BookPreviewViewBody> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const SizedBox(height: 40),
-                    const Row(
-                      children: [
-                        Text(
-                          'The Jungle Book',
-                          style: Styles.textStyle30,
-                        ),
-                      ],
+                    Text(
+                      widget.bookModel.volumeInfo.title,
+                      style: Styles.textStyle30,
                     ),
                     const SizedBox(height: 8),
                     Row(
                       children: [
                         Text(
-                          'Rudyard Kipling',
+                          widget.bookModel.volumeInfo.authors[0],
                           style: Styles.textStyle18.copyWith(
                             color: Colors.white.withOpacity(0.7),
                           ),
@@ -53,9 +51,12 @@ class _BookPreviewViewBodyState extends State<BookPreviewViewBody> {
                       ],
                     ),
                     const SizedBox(height: 7),
-                    const Row(
+                    Row(
                       children: [
-                        BookRating(),
+                        BookRating(
+                          avgRating: widget.bookModel.volumeInfo.averageRating ?? 0,
+                          ratingCount: widget.bookModel.volumeInfo.ratingsCount ?? 0,
+                        ),
                       ],
                     ),
                     const SizedBox(height: 15),
@@ -69,11 +70,11 @@ class _BookPreviewViewBodyState extends State<BookPreviewViewBody> {
           ],
         ),
         Positioned(
-          bottom: MediaQuery.of(context).size.height * 0.3 - 45,
+          bottom: MediaQuery.of(context).size.height * 0.3 - 55,
           left: MediaQuery.of(context).size.width * 0.5 - 30,
           child: PlayButton(onPressed: () {
             setState(() {
-              videoProgress = 0.8;
+              videoProgress = 0.5;
             });
           }),
         ),
