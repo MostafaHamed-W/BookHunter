@@ -5,6 +5,7 @@ import 'package:book_hunt/Features/preview/presentation/views/widgets/video_prog
 import 'package:book_hunt/Features/preview/presentation/views/widgets/video_time_text.dart';
 import 'package:book_hunt/core/utils/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'custom_book_preview_photo.dart';
 
 class BookPreviewViewBody extends StatefulWidget {
@@ -36,7 +37,7 @@ class _BookPreviewViewBodyState extends State<BookPreviewViewBody> {
                   children: [
                     const SizedBox(height: 40),
                     Text(
-                      widget.bookModel.volumeInfo.title,
+                      widget.bookModel.volumeInfo.title ?? 'No title',
                       style: Styles.textStyle30,
                     ),
                     const SizedBox(height: 8),
@@ -72,11 +73,25 @@ class _BookPreviewViewBodyState extends State<BookPreviewViewBody> {
         Positioned(
           bottom: MediaQuery.of(context).size.height * 0.3 - 55,
           left: MediaQuery.of(context).size.width * 0.5 - 30,
-          child: PlayButton(onPressed: () {
-            setState(() {
-              videoProgress = 0.5;
-            });
-          }),
+          child: PlayButton(
+            onPressed: () {
+              setState(() {
+                videoProgress = 0.5;
+              });
+            },
+          ),
+        ),
+        Positioned(
+          top: 10,
+          left: 10,
+          child: IconButton(
+            onPressed: () {
+              GoRouter.of(context).pop();
+            },
+            icon: const Icon(
+              Icons.arrow_back_ios_new,
+            ),
+          ),
         ),
       ],
     );

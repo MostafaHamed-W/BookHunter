@@ -27,11 +27,29 @@ class SearchViewBody extends StatelessWidget {
         BlocBuilder<SearchBookCubit, SearchBookState>(
           builder: (context, state) {
             if (state is SearchBookInitial) {
-              return const Expanded(
+              return Expanded(
                 child: Center(
-                  child: Text(
-                    'Enter book you want to search',
-                    style: Styles.textStyle20,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        const SizedBox(height: 200),
+                        Icon(
+                          Icons.search,
+                          size: MediaQuery.of(context).size.width * 0.25,
+                          color: Colors.white.withOpacity(0.7),
+                        ),
+                        Text(
+                          'Please enter book name or category to search',
+                          style: Styles.textStyle20.copyWith(
+                            fontSize: 23,
+                            color: Colors.white.withOpacity(0.7),
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               );
@@ -49,8 +67,10 @@ class SearchViewBody extends StatelessWidget {
             } else if (state is SearchBookFailure) {
               return CustomErrorWidget(errMessage: state.errMessage);
             } else {
-              return const Center(
-                child: CircularProgressIndicator(),
+              return const Expanded(
+                child: Center(
+                  child: CircularProgressIndicator(),
+                ),
               );
             }
           },

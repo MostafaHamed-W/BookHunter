@@ -35,7 +35,7 @@ class BestSellerBookListViewItem extends StatelessWidget {
                     SizedBox(
                       width: MediaQuery.of(context).size.width * 0.5,
                       child: Text(
-                        bookModel.volumeInfo.title,
+                        bookModel.volumeInfo.title ?? 'No title',
                         style: Styles.textStyle20.copyWith(
                           fontFamily: AssetsData.kGspectraFine,
                           fontWeight: FontWeight.normal,
@@ -49,18 +49,18 @@ class BestSellerBookListViewItem extends StatelessWidget {
                     const SizedBox(height: 5),
                     Row(
                       children: [
-                        Text(
+                        const Text(
                             // '19.99 €'
                             'Free',
                             style: Styles.textStyle20),
-                        Spacer(
+                        const Spacer(
                           flex: 8,
                         ),
                         BookRating(
                           avgRating: bookModel.volumeInfo.averageRating ?? 0,
                           ratingCount: bookModel.volumeInfo.ratingsCount ?? 0,
                         ),
-                        Spacer(flex: 3)
+                        const Spacer(flex: 3)
                       ],
                     )
                   ],

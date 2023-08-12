@@ -1,3 +1,4 @@
+import 'package:book_hunt/core/utils/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -20,7 +21,9 @@ class CustomBookDetailsAppBar extends StatelessWidget {
           ),
           const Spacer(),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              GoRouter.of(context).pushReplacement(AppRouter.kHomeView);
+            },
             icon: const Icon(Icons.shopping_cart),
             padding: EdgeInsets.zero,
             iconSize: 30,

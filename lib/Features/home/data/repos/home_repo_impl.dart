@@ -4,6 +4,7 @@ import 'package:book_hunt/core/errors/failures.dart';
 import 'package:book_hunt/core/utils/api_service.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter/cupertino.dart';
 
 class HomeRepoImpl extends HomeRepo {
   final ApiService apiService;
@@ -53,9 +54,13 @@ class HomeRepoImpl extends HomeRepo {
   Future<Either<Failure, List<BookModel>>> fetchSimilarBooks({required String category}) async {
     try {
       var data = await apiService.get(endPoint: 'volumes?&orderBy=newest&q=subject:$category');
-      List<BookModel> books = [];
-      for (var item in data['items']) {
-        books.add(BookModel.fromJson(item));
+      List<BookModel>? books = [];
+      try {
+        for (var item in data['items']) {
+          books.add(BookModel.fromJson(item));
+        }
+      } catch (e) {
+        debugPrint(e.toString());
       }
       return right(books);
     } catch (e) {

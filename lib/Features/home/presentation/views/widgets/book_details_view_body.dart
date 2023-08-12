@@ -19,11 +19,11 @@ class BookDetailsViewBody extends StatelessWidget {
         const Spacer(flex: 1),
         SizedBox(
           width: MediaQuery.of(context).size.width * 0.45,
-          child: CustomBookImage(imageUrl: bookModel.volumeInfo.imageLinks!.thumbnail),
+          child: CustomBookImage(imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail ?? ''),
         ),
         const SizedBox(height: 34),
         Text(
-          bookModel.volumeInfo.title,
+          bookModel.volumeInfo.title ?? 'No title',
           style: Styles.textStyle30,
           textAlign: TextAlign.center,
         ),
