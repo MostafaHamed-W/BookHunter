@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 import '../../../../../core/utils/styles.dart';
+import 'custom_book_image.dart';
 
 class NewestBooksListShimmer extends StatelessWidget {
   const NewestBooksListShimmer({super.key});
@@ -104,6 +105,38 @@ class FeaturedBooksListShimmer extends StatelessWidget {
                     ),
                   ),
                 ));
+          },
+        ),
+      ),
+    );
+  }
+}
+
+class SimilarBooksShimmer extends StatelessWidget {
+  const SimilarBooksShimmer({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 112,
+      child: Shimmer.fromColors(
+        baseColor: Colors.white.withOpacity(0.5),
+        highlightColor: Colors.grey.withOpacity(0.5),
+        child: ListView.builder(
+          itemCount: 10,
+          scrollDirection: Axis.horizontal,
+          itemBuilder: (context, index) {
+            return Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 5),
+              child: GestureDetector(
+                onTap: () {},
+                child: const CustomBookImage(
+                    aspectRatio: 70 / 112,
+                    imageUrl: 'https://edit.org/images/cat/book-covers-big-2019101610.jpg'),
+              ),
+            );
           },
         ),
       ),
