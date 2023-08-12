@@ -3,7 +3,6 @@ import 'package:book_hunt/Features/home/presentation/manager/similar_books_cubit
 import 'package:book_hunt/Features/home/presentation/views/book_details_view.dart';
 import 'package:book_hunt/Features/home/presentation/views/home_view.dart';
 import 'package:book_hunt/Features/preview/presentation/views/book_preview_view.dart';
-import 'package:book_hunt/Features/search/data/repos/search_repo.dart';
 import 'package:book_hunt/Features/search/data/repos/search_repo_impl.dart';
 import 'package:book_hunt/Features/search/presentation/manager/cubit/search_book_cubit.dart';
 import 'package:book_hunt/Features/search/presentation/views/search_view.dart';

@@ -2,8 +2,6 @@ import 'package:book_hunt/Features/home/data/book_model/book_model.dart';
 import 'package:book_hunt/core/utils/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:url_launcher/url_launcher.dart';
-
 import '../../../../../core/utils/functions/launch_url.dart';
 import '../../../../../core/utils/styles.dart';
 import '../../../../../core/widgets/custom_button.dart';

@@ -1,10 +1,7 @@
 import 'package:book_hunt/Features/search/presentation/manager/cubit/search_book_cubit.dart';
-import 'package:book_hunt/Features/search/presentation/views/widgets/search_result_listview.dart';
-import 'package:book_hunt/core/errors/failures.dart';
 import 'package:book_hunt/core/utils/custom_error_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../../../../../core/utils/styles.dart';
 import '../../../../home/presentation/views/widgets/book_listview_item.dart';
 import 'custom_search_text_field.dart';

@@ -4,6 +4,7 @@ import 'package:book_hunt/core/errors/failures.dart';
 import 'package:book_hunt/core/utils/api_service.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter/cupertino.dart';
 
 class SearchRepoImpl extends SearchRepo {
   final ApiService apiService;
@@ -24,7 +25,7 @@ class SearchRepoImpl extends SearchRepo {
       if (e is DioError) {
         return Left(ServerFailure.fromDioError(e));
       } else {
-        print(e.toString());
+        debugPrint(e.toString());
         return Left(ServerFailure(e.toString()));
       }
     }

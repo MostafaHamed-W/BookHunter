@@ -1,4 +1,3 @@
-import 'package:book_hunt/Features/home/data/book_model/book_model.dart';
 import 'package:book_hunt/Features/home/presentation/manager/similar_books_cubit/similar_books_cubit.dart';
 import 'package:book_hunt/core/utils/app_router.dart';
 import 'package:book_hunt/core/utils/custom_error_widget.dart';
