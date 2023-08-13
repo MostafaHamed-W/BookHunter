@@ -20,11 +20,11 @@ Feel free to reach out for collaboration opportunities or to share your feedback
 <p>
 <img src="https://github.com/MostafaHamed-W/BookHunter/assets/120649545/a7a8aa24-2c8e-49a7-9384-c392dc818fb4" alt="Splash View" width="200">
 <img src="https://github.com/MostafaHamed-W/BookHunter/assets/120649545/068b176f-6915-41b3-84c1-7223b1534873" width="200">
-<img src="https://github.com/MostafaHamed-W/BookHunter/assets/120649545/74d52eab-74d1-4f24-836f-2e7f4f5dbbaa" alt="NavDrawer View" width="200">
-<img src="https://github.com/MostafaHamed-W/BookHunter/assets/120649545/4514689a-a818-4af8-ac96-646dc6ea584f" alt="NavDrawer View Login" width="200">
-<img src="https://github.com/MostafaHamed-W/BookHunter/assets/120649545/d68bab41-7dc4-4166-962b-4dde6241a0c2" alt="Teachers View" width="200">
-<img src="https://github.com/MostafaHamed-W/BookHunter/assets/120649545/34b31149-1da0-45da-a256-8cbd69a5e566" alt="About View" width="200">
-<img src="https://github.com/MostafaHamed-W/BookHunter/assets/120649545/8486efb8-b1a9-4eb6-baf1-39d978309f24" alt="Contribute View" width="200">
+<img src="https://github.com/MostafaHamed-W/BookHunter/assets/120649545/74d52eab-74d1-4f24-836f-2e7f4f5dbbaa" width="200">
+<img src="https://github.com/MostafaHamed-W/BookHunter/assets/120649545/4514689a-a818-4af8-ac96-646dc6ea584f" width="200">
+<img src="https://github.com/MostafaHamed-W/BookHunter/assets/120649545/d68bab41-7dc4-4166-962b-4dde6241a0c2" width="200">
+<img src="https://github.com/MostafaHamed-W/BookHunter/assets/120649545/34b31149-1da0-45da-a256-8cbd69a5e566" width="200">
+<img src="https://github.com/MostafaHamed-W/BookHunter/assets/120649545/8486efb8-b1a9-4eb6-baf1-39d978309f24" width="200">
 <img src="https://github.com/MostafaHamed-W/BookHunter/assets/120649545/8ac2c27c-3135-412b-a3ee-882d990e51c0" width="200">
 <img src="https://github.com/MostafaHamed-W/BookHunter/assets/120649545/954cf6be-e4c4-4479-b8b5-34e0133305ff" width="200">
 <img src="https://github.com/MostafaHamed-W/BookHunter/assets/120649545/60187a54-2403-4fb5-996c-bcf0c1e7ae8a" width="200">
