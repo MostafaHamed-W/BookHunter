@@ -1,6 +1,6 @@
 
 ## Book Hunter 📚
- an immersive reading experience for book enthusiasts! 🚀   
+An immersive reading experience for book enthusiasts! 🚀   
 #### Key Features:   
 📚 Extensive Book Collection: Immerse yourself in an expansive library of free books, covering a wide array of genres and topics. From classic literature to contemporary bestsellers, our app offers something for every book lover.
 #### 🔍 Intuitive Search:
